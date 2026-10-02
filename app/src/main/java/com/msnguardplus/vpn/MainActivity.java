@@ -10,7 +10,7 @@ public class MainActivity extends Activity {
         TextView title=t("MSN-GUARD+",28); title.setTextColor(Color.WHITE); root.addView(title);
         status=t("آماده — هستهٔ VPN در حال اتصال به NativeCore است",16); status.setTextColor(Color.LTGRAY); root.addView(status);
         try { int n=ServerRepository.load(this).size(); count=t("تعداد ورودی‌های سرور از APK اصلی: "+n,16); count.setTextColor(Color.GREEN); root.addView(count); } catch(Exception e){}
-        connect=new Button(this); connect.setText("اتصال"); root.addView(connect,new LinearLayout.LayoutParams(-1,WRAP_CONTENT));
+        connect=new Button(this); connect.setText("اتصال"); root.addView(connect,new LinearLayout.LayoutParams(-1,LinearLayout.LayoutParams.WRAP_CONTENT));
         TextView info=t("امکانات: انتخاب سرور، Kill Switch، Split Tunnel، تست تأخیر و DNS leak protection\n\nاین نسخه از server_entries.txt و native libraries همان APK مرجع استفاده می‌کند.",15); info.setTextColor(Color.GRAY); root.addView(info);
         connect.setOnClickListener(v -> requestVpn()); setContentView(root);
     }
